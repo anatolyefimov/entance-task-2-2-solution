@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/anatolyefimov/entance-task-2-2-solution#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.26.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
   }
 }
