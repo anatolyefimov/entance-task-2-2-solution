@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var jade = require('gulp-jade');
 var browserSync = require('browser-sync');
 
 var reload = browserSync.reload;
@@ -11,13 +12,19 @@ gulp.task('sass', function() {
         .pipe(reload({ stream:true }));
 });
 
-gulp.task('serve', function() {
+gulp.task('jade', function() {
+    return gulp.src('./src/index.jade')
+        .pipe(jade())
+        .pipe(gulp.dest('./dist'))
+})
+
+gulp.task('dev',['sass', 'jade'], function() {
     browserSync({
         server: {
-          baseDir: './'
+          baseDir: './dist'
         }
     });
 
-    gulp.watch(['*.html', './src/styles/*.scss'], ['sass'])
+    gulp.watch(['./srd/*.jade', './src/styles/*.scss'], ['sass'])
     
 })
