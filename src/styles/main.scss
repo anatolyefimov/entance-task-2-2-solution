@@ -1,5 +1,11 @@
-$red-color:red;
+body {
+    display: flex;
+    margin: 0;
+}
 
-.red {
-    color: green;
+.header {
+    background: grey;
+    height: 100px;
+    width: 100%;
+    margin: 10px;
 }

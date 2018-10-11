@@ -16,6 +16,7 @@ gulp.task('jade', function() {
     return gulp.src('./src/index.jade')
         .pipe(jade())
         .pipe(gulp.dest('./dist'))
+        .pipe(reload({ stream:true }));
 })
 
 gulp.task('dev',['sass', 'jade'], function() {
@@ -25,6 +26,7 @@ gulp.task('dev',['sass', 'jade'], function() {
         }
     });
 
-    gulp.watch(['./srd/*.jade', './src/styles/*.scss'], ['sass'])
+    gulp.watch(['./src/styles/*.scss'], ['sass']);
+    gulp.watch(['./src/index.jade'], ['jade']);
     
 })
