@@ -1,11 +1,46 @@
+html , body     {
+    height: 100%;
+}
+
 body {
-    display: flex;
     margin: 0;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color : #333333;
+    opacity: 0.6;
+    margin-right: 26px;
 }
 
 .header {
-    background: grey;
-    height: 100px;
+    height: 91px;
     width: 100%;
-    margin: 10px;
+    border-bottom: 1px #F0F0F0 solid;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: row;
+}
+
+.info,
+.scenario {
+    flex-basis: 50%;
+    border: 3px solid black;
+}
+
+.footer, .devices {
+    height: 61px;
+    border: 3px solid black;
+
+}
+

@@ -21,9 +21,7 @@ gulp.task('jade', function() {
 
 gulp.task('dev',['sass', 'jade'], function() {
     browserSync({
-        server: {
-          baseDir: './dist'
-        }
+        server: ['./dist', './assets']
     });
 
     gulp.watch(['./src/styles/*.scss'], ['sass']);
