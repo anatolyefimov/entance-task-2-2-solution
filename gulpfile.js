@@ -21,11 +21,14 @@ gulp.task('jade', function() {
 
 gulp.task('dev',['sass', 'jade'], function() {
     browserSync({
-        server: {
-          baseDir: './dist'
-        }
+        server: ['./dist', './assets']
     });
 
+<<<<<<< HEAD
     gulp.watch(['./src/*.jade', './src/styles/*.scss'], ['sass', 'jade'])
+=======
+    gulp.watch(['./src/styles/*.scss'], ['sass']);
+    gulp.watch(['./src/index.jade'], ['jade']);
+>>>>>>> dev
     
 })
