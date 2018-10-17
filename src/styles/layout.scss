@@ -1,0 +1,31 @@
+.header {
+    box-sizing: border-box;
+    padding-left: 40px;
+    height: 91px;
+    width: 100%;
+    border-bottom: 1px #F0F0F0 solid;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: row;
+    padding-left: 40px;
+}
+
+.info,
+.scenario {
+    flex-basis: 50%;
+    border: 3px solid black;
+    min-width: 400px;
+}
+
+.footer, .devices {
+    height: 61px;
+    border: 3px solid black;
+
+}

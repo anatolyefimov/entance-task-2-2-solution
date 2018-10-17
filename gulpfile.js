@@ -6,7 +6,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('sass', function() {
-    return gulp.src('./src/styles/*.scss')
+    return gulp.src('./src/styles/main.scss')
         .pipe(sass())
         .pipe(gulp.dest('./dist'))
         .pipe(reload({ stream:true }));
@@ -24,11 +24,7 @@ gulp.task('dev',['sass', 'jade'], function() {
         server: ['./dist', './assets']
     });
 
-<<<<<<< HEAD
-    gulp.watch(['./src/*.jade', './src/styles/*.scss'], ['sass', 'jade'])
-=======
     gulp.watch(['./src/styles/*.scss'], ['sass']);
     gulp.watch(['./src/index.jade'], ['jade']);
->>>>>>> dev
     
 })

@@ -1,3 +1,6 @@
+$color-black: #333333;
+$color-gray: #858585;
+
 html , body     {
     height: 100%;
 }
@@ -11,36 +14,27 @@ body {
 
 a {
     text-decoration: none;
-    color : #333333;
+    color : $color-black;
     opacity: 0.6;
     margin-right: 26px;
 }
 
-.header {
-    height: 91px;
-    width: 100%;
-    border-bottom: 1px #F0F0F0 solid;
+a:hover {
+    color : #c00;
+    opacity: 1;
+}
+
+.active {
+    opacity: 1;
+    margin-right: 28px;
+}
+
+%block-header {
+    font-family: Arial;
     font-weight: bold;
-    display: flex;
-    align-items: center;
+    font-size: 18px;
+    color: $color-black;
 }
 
-.container {
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 0%;
-    flex-direction: row;
-}
-
-.info,
-.scenario {
-    flex-basis: 50%;
-    border: 3px solid black;
-}
-
-.footer, .devices {
-    height: 61px;
-    border: 3px solid black;
-
-}
-
+@import 'layout.scss';
+@import 'info.scss'
