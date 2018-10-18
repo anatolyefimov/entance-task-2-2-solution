@@ -1,4 +1,9 @@
 .info-header {
     @extend %block-header;
-    height: 70px;
+    line-height: 70px;
+    vertical-align: 20px;
+}
+
+.info-content {
+
 }

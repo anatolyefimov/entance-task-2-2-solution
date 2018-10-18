@@ -14,17 +14,23 @@ gulp.task('sass', function() {
 
 gulp.task('jade', function() {
     return gulp.src('./src/index.jade')
-        .pipe(jade())
-        .pipe(gulp.dest('./dist'))
+        .pipe(jade({
+            pretty: true
+          }))
+        .pipe(gulp.dest('./dist')) 
         .pipe(reload({ stream:true }));
 })
 
-gulp.task('dev',['sass', 'jade'], function() {
+gulp.task('build', ['sass', 'jade']);
+
+gulp.task('serve', ['build'], function() {
     browserSync({
-        server: ['./dist', './assets']
+        server: {
+            baseDir:'./',
+            index: './dist/index.html'
+        }
     });
 
-    gulp.watch(['./src/styles/*.scss'], ['sass']);
-    gulp.watch(['./src/index.jade'], ['jade']);
-    
-})
+    gulp.watch(['./src/styles/*.scss'], ['sass'], reload({ stream:true }));
+    gulp.watch(['./src/index.jade'], ['jade'], reload({ stream:true }));
+} )

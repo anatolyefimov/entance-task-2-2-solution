@@ -2,16 +2,17 @@ doctype html
 html
   head
     title Яндекс.Дом
-    link(rel='stylesheet', href='main.css')
+    link(rel='stylesheet', href='/dist/main.css')
   body 
     .header 
-      img(src='main-logo.svg' style='margin-right: 30px;')
+      img(src='/assets/main-logo.svg' style='margin-right: 30px;')
       a.active(href='#') Сводка
       a(href='#') Устройства
       a(href) Сценарии
     .container
       .info 
         .info-header Главное
+        .info-content
       .scenario scenario
     .devices
     .footer
