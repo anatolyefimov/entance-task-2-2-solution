@@ -17,11 +17,10 @@ a {
     color : $color-black;
     opacity: 0.6;
     margin-right: 26px;
-}
-
-a:hover {
-    color : #c00;
-    opacity: 1;
+    &:hover {
+        color : #c00;
+        opacity: 1;
+    }
 }
 
 .active {

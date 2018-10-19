@@ -1,3 +1,9 @@
+.info {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .info-header {
     @extend %block-header;
     line-height: 70px;
@@ -5,5 +11,9 @@
 }
 
 .info-content {
-
+    background-image: url('/assets/info-bg.png');
+    border-radius: 15px;
+    background-position: top;
+    background-size: cover;
+    flex-grow: 1;
 }
