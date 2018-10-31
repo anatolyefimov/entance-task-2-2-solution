@@ -12,6 +12,7 @@ gulp.task('sass', function() {
         .pipe(reload({ stream:true }));
 });
 
+
 gulp.task('jade', function() {
     return gulp.src('./src/index.jade')
         .pipe(jade({
@@ -21,7 +22,7 @@ gulp.task('jade', function() {
         .pipe(reload({ stream:true }));
 })
 
-gulp.task('build', ['sass', 'jade']);
+gulp.task('build', ['jade', 'sass'])
 
 gulp.task('serve', ['build'], function() {
     browserSync({

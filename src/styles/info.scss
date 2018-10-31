@@ -10,6 +10,8 @@
     vertical-align: 20px;
 }
 
+
+
 .info-content {
     background-image: url('/assets/info-bg.png');
     border-radius: 15px;
@@ -18,27 +20,24 @@
     flex-grow: 1;
     justify-content: space-between;
     display: flex;
-    padding: 26px 20px 0 25px;
+    padding: 0 20px 0 25px;
     box-sizing: border-box;
     &-state {
-        flex-grow: 1;
-        &-safety {
-            @extend %block-header;
-            font-size: 27px;
-            line-height: 25px;
-        }
+        
     }
     &-scenarios {
-
         width: 200px;
+        padding-top: 25px;
         overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
-    .scenario {
+    .plate {
         width: 200px;
         height: 150px;
         border-radius: 20px;
         background: #F7F7F7;
         margin-bottom: 15px;
     }
-
 }

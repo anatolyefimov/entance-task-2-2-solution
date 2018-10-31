@@ -9,20 +9,17 @@ html
       img(src='/assets/main-logo.svg' style='margin-right: 52px;')
       a.active(href='#') Сводка
       a(href='#') Устройства
-      a(href) Сценарии
+      a(href='#') Сценарии
     .container
       .info 
         .info-header Главное
         .info-content 
           .info-content-state
-            .info-content-state-safety
-              |Привет, Геннадий! 
-              br
-              span(style='font-size: 14px; font-weight: normal') Двери и окна закрыты, сигнализация включена.
+            
           .info-content-scenarios
-            -for (var x = 0; x < 10; x++)
-              .scenario
-      .scenario scenario
+            -for (var x = 0; x < 4; x++)
+              .plate
+      .scenario scenario 
     .devices
     .footer
 
