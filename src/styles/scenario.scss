@@ -1,0 +1,26 @@
+.scenario {
+    display: flex;
+    flex-direction: column;
+}
+
+.scenario-header {
+    @extend %block-header;
+    line-height: 70px;
+    vertical-align: 20px;
+}
+
+.scenario-content {
+    flex-grow: 1;
+    .book {
+        width: 100%;
+        column-width: 100px;
+    }
+    .plate {
+        width: 200px;
+        height: 100px;
+        background-color: #F7F7F7;
+        display: inline-block;
+        border-radius: 20px;
+        margin: 0 15px 15px 0;
+    }
+}
