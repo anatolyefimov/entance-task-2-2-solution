@@ -25,6 +25,7 @@
     }
     &-scenarios {
         width: 200px;
+        flex-grow: 0;
         padding-top: 25px;
         overflow: scroll;
         &::-webkit-scrollbar {
