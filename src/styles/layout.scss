@@ -7,6 +7,7 @@
     font-weight: bold;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .container {
@@ -22,14 +23,13 @@
 .info,
 .scenario {
     flex-basis: 50%;
-
-
 }
 
 .footer, .devices {
     height: 61px;
     border: 3px solid black;
     width: 100%;
+    flex-shrink: 0;
 }
 
 @media (max-width : 640px) {

@@ -1,6 +1,4 @@
-.info {
-    display: flex;
-    flex-direction: column;
+.info{
 
 }
 
@@ -15,5 +13,16 @@
     border-radius: 15px;
     background-position: top;
     background-size: cover;
-    flex-grow: 1;
+    height: 200px;
+    &-scenarios {
+        width: 200px;
+        overflow: scroll;
+        height:100%;
+    }
+    .plate {
+        width: 200px;
+        height: 120px;
+        border-radius: 20px;
+        background: $color-light-gray;
+    }
 }
