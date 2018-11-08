@@ -1,7 +1,7 @@
 .info {
     display: flex;
     flex-direction: column;
-
+    max-height: 100%;
 }
 
 .info-header {
@@ -11,6 +11,7 @@
 }
 
 .info-content {
+    max-height: calc(100% - 70px);
     background-image: url('/assets/info-bg.png');
     border-radius: 15px;
     background-position: top;

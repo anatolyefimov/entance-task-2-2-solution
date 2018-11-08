@@ -1,6 +1,8 @@
 $color-black: #333333;
 $color-gray: #858585;
 
+$header-height: 91px;
+
 html , body     {
     height: 100%;
 }
@@ -10,6 +12,7 @@ body {
     font-family: Arial;
     display: flex;
     flex-direction: column;
+    
 }
 
 a {

@@ -1,7 +1,7 @@
 .header {
     box-sizing: border-box;
     padding-left: 40px;
-    height: 91px;
+    height: $header-height;
     width: 100%;
     border-bottom: 1px #F0F0F0 solid;
     font-weight: bold;
@@ -16,7 +16,7 @@
     flex-direction: row;
     padding-left: 40px;
     padding-right: 40px;
-
+    max-height: calc(100vh - 291px);
 }
 
 .info {
@@ -33,6 +33,7 @@
     border: 3px solid black;
     width: 100%;
     flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 @media (max-width : 640px) {
