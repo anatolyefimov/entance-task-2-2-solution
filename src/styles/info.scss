@@ -1,5 +1,6 @@
 .info{
 
+   
 }
 
 .info-header {
@@ -8,21 +9,13 @@
     vertical-align: 20px;
 }
 
+
+
 .info-content {
     background-image: url('/assets/info-bg.png');
     border-radius: 15px;
     background-position: top;
     background-size: cover;
-    height: 200px;
-    &-scenarios {
-        width: 200px;
-        overflow: scroll;
-        height:100%;
-    }
-    .plate {
-        width: 200px;
-        height: 120px;
-        border-radius: 20px;
-        background: $color-light-gray;
-    }
+   
+   
 }

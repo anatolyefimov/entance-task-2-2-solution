@@ -3,10 +3,10 @@ $color-gray: #858585;
 $color-light-gray: #F7F7F7;
 
 html , body     {
-    height: 100%;
+    max-height: 100vh;
 }
 
-body {
+body {  
     margin: 0;
     font-family: Arial;
     display: flex;

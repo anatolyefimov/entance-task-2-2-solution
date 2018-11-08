@@ -13,11 +13,21 @@
 .container {
     display: flex;
     flex-grow: 1;
-
+    flex-basis: auto;
     flex-direction: row;
     padding-left: 40px;
     padding-right: 40px;
-
+    &-scenarios {
+        width: 200px;
+        overflow: scroll;
+    }
+    .plate {
+        width: 200px;
+        height: 120px;
+        border-radius: 20px;
+        background: $color-light-gray;
+    }
+    overflow: scroll;
 }
 
 .info,
