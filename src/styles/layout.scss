@@ -16,7 +16,7 @@
     flex-direction: row;
     padding-left: 40px;
     padding-right: 40px;
-    max-height: calc(100vh - 263px - 91px);
+    max-height: calc(100vh - 261px - 91px);
 }
 
 .info {
@@ -37,8 +37,9 @@
 }
 
 .devices {
-    height: 202px;
+    height: 200px;
     flex-shrink: 0;
+    padding-left: 40px;
 }
 
 @media (max-width : 640px) {

@@ -1,12 +1,14 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var scss = require('gulp-scss')
 var jade = require('gulp-jade');
+var pug = require('gulp-pug')
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 
 var reload = browserSync.reload;
 
-gulp.task('sass', function() {
+exports.scss = function scss(){
     return gulp.src('./src/styles/main.scss')
         .pipe(sass())
         .pipe(autoprefixer({
@@ -14,21 +16,17 @@ gulp.task('sass', function() {
         }))
         .pipe(gulp.dest('./dist'))
         .pipe(reload({ stream:true }));
-});
+};
 
 
-gulp.task('jade', function() {
+exports.jade = function jade() {
     return gulp.src('./src/index.jade')
-        .pipe(jade({
-            pretty: true
-          }))
+        .pipe(pug())
         .pipe(gulp.dest('./dist')) 
-        .pipe(reload({ stream:true }));
-})
+        //.pipe(reload({ stream:true }));
+};
 
-gulp.task('build', ['jade', 'sass'])
-
-gulp.task('serve', ['build'], function() {
+exports.livereload = function livereload() {
     browserSync({
         server: {
             baseDir:'./',
@@ -36,6 +34,8 @@ gulp.task('serve', ['build'], function() {
         }
     });
 
-    gulp.watch(['./src/styles/*.scss'], ['sass'], reload({ stream:true }));
-    gulp.watch(['./src/index.jade'], ['jade'], reload({ stream:true }));
-} )
+    gulp.watch('./src/styles/*.scss', gulp.series(scss, reload({ stream:true })));
+    gulp.watch('./src/index.jade', gulp.series(jade, reload({ stream:true })));
+} 
+
+exports.serve = gulp.series(scss, jade);
