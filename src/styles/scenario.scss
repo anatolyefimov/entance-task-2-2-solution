@@ -11,9 +11,13 @@
 
 .scenario-content {
     flex-grow: 1;
+    max-height: calc(100% - 70px);
+    overflow: scroll;
     .book {
-        width: 100%;
-        column-width: 100px;
+        width: 150%;
+
+        height: 100%;
+        column-width: calc((100vw - 170px) /2) ;
     }
     .plate {
         width: 200px;

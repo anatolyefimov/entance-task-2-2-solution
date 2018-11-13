@@ -1,0 +1,6 @@
+.devices {
+    &-header {
+        @extend %block-header;
+        line-height: 80px;
+    }
+}

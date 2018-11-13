@@ -27,10 +27,17 @@
     &-scenarios {
         width: 200px;
         flex-grow: 0;
-        padding-top: 25px;
-        overflow: scroll;
+        height: 100%;
+        overflow-x: hidden;
         &::-webkit-scrollbar {
             display: none;
+        }
+        .hide-scrollbar {
+            box-sizing: border-box;
+            padding-top: 25px;
+            max-height: 100%;
+            width: calc(100% + 20px);
+            overflow-y: scroll;
         }
     }
     .plate {
