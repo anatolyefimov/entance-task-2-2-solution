@@ -1,4 +1,4 @@
-var gulp = require('gulp');
+var {series, src, dest, watch}= require('gulp');
 var sass = require('gulp-sass');
 var scss = require('gulp-scss')
 var jade = require('gulp-jade');
@@ -8,25 +8,25 @@ var browserSync = require('browser-sync');
 
 var reload = browserSync.reload;
 
-exports.scss = function scss(){
-    return gulp.src('./src/styles/main.scss')
+function css(){
+    return src('./src/styles/main.scss')
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(dest('./dist'))
+        .pipe(reload({ stream:true }));
+
+};
+
+function html() {
+    return src('./src/index.jade')
+        .pipe(pug())
+        .pipe(dest('./dist')) 
         .pipe(reload({ stream:true }));
 };
 
-
-exports.jade = function jade() {
-    return gulp.src('./src/index.jade')
-        .pipe(pug())
-        .pipe(gulp.dest('./dist')) 
-        //.pipe(reload({ stream:true }));
-};
-
-exports.livereload = function livereload() {
+function livereload(cb) {
     browserSync({
         server: {
             baseDir:'./',
@@ -34,8 +34,17 @@ exports.livereload = function livereload() {
         }
     });
 
-    gulp.watch('./src/styles/*.scss', gulp.series(scss, reload({ stream:true })));
-    gulp.watch('./src/index.jade', gulp.series(jade, reload({ stream:true })));
+    watch('./src/styles/*.scss', css, function(cb) {
+        reload({ stream:true })
+        cb()
+    });
+    watch('./src/index.jade', html, function(cb) {
+        reload({ stream:true })
+        cb()
+    });
+   
 } 
 
-exports.serve = gulp.series(scss, jade);
+exports.livereload = livereload;
+
+exports.default = series(css, html, livereload)
