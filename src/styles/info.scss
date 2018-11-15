@@ -27,8 +27,8 @@
     &-scenarios {
         width: 200px;
         flex-grow: 0;
-        height: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
+
         &::-webkit-scrollbar {
             display: none;
         }
