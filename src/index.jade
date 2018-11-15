@@ -2,11 +2,11 @@ doctype html
 html
   head
     title Яндекс.Дом
-    link(rel='stylesheet', href='/dist/main.css')
+    link(rel='stylesheet', href='main.css')
     meta(name='viewport' content='width=device-width, initial-scale-1.0')
   body 
     .header 
-      img(src='/assets/main-logo.svg' style='margin-right: 52px;')
+      img(src='main-logo.svg' style='margin-right: 52px;')
       a.active(href='#') Сводка
       a(href='#') Устройства
       a(href='#') Сценарии
@@ -27,10 +27,15 @@ html
             -for (var x = 0; x < 10; x++)
               .plate  
     .devices 
-      .devices-header Избраныне устройства
+      .devices-header 
+        |Избраныне устройства 
+        div
+          img(src='arrow-left.svg' style='margin-right: 20px')
+          img(src='arrow-left.svg' style='transform: rotate(180deg);')
       .devices-content 
         -for (var x = 0;  x < 10; x++)
           .plate
     .footer
+    script(src='script.js')
 
     

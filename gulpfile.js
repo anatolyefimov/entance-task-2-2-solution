@@ -1,10 +1,9 @@
 var {series, src, dest, watch}= require('gulp');
 var sass = require('gulp-sass');
-var scss = require('gulp-scss')
-var jade = require('gulp-jade');
 var pug = require('gulp-pug')
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
+var babel = require('gulp-babel')
 
 var reload = browserSync.reload;
 
@@ -19,6 +18,14 @@ function css(){
 
 };
 
+function js() {
+    return src('src/script.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(dest('dist'))
+};
+
 function html() {
     return src('./src/index.jade')
         .pipe(pug())
@@ -28,10 +35,7 @@ function html() {
 
 function livereload(cb) {
     browserSync({
-        server: {
-            baseDir:'./',
-            index: './dist/index.html'
-        }
+        server: ['./dist', './assets']
     });
 
     watch('./src/styles/*.scss', css, function(cb) {
@@ -47,4 +51,4 @@ function livereload(cb) {
 
 exports.livereload = livereload;
 
-exports.default = series(css, html, livereload)
+exports.default = series(css, html, js, livereload)

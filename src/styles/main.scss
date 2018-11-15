@@ -36,6 +36,8 @@ a {
     font-weight: bold;
     font-size: 18px;
     color: $color-black;
+    display: flex;
+    justify-content: space-between;
 }
 
 @import 'layout.scss';
