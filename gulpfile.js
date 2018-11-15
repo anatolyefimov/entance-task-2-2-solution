@@ -24,6 +24,7 @@ function js() {
             presets: ['@babel/env']
         }))
         .pipe(dest('dist'))
+        .pipe(reload({ stream:true }));
 };
 
 function html() {
@@ -43,6 +44,10 @@ function livereload(cb) {
         cb()
     });
     watch('./src/index.jade', html, function(cb) {
+        reload({ stream:true })
+        cb()
+    });
+    watch('./src/script.js', js, function(cb) {
         reload({ stream:true })
         cb()
     });
