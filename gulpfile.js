@@ -1,4 +1,4 @@
-var {series, src, dest, watch}= require('gulp');
+var {series, src, dest, watch, parallel}= require('gulp');
 var sass = require('gulp-sass');
 var pug = require('gulp-pug')
 var autoprefixer = require('gulp-autoprefixer');
@@ -51,4 +51,4 @@ function livereload(cb) {
 
 exports.livereload = livereload;
 
-exports.default = series(css, html, js, livereload)
+exports.default = series(parallel(css, html, js), livereload)
