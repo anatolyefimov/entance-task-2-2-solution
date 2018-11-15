@@ -19,7 +19,7 @@ function css(){
 };
 
 function js() {
-    return src('src/script.js')
+    return src('src/*.js')
         .pipe(babel({
             presets: ['@babel/env']
         }))
@@ -47,7 +47,7 @@ function livereload(cb) {
         reload({ stream:true })
         cb()
     });
-    watch('./src/script.js', js, function(cb) {
+    watch('./src/*.js', js, function(cb) {
         reload({ stream:true })
         cb()
     });

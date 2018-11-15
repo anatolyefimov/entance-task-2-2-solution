@@ -30,12 +30,14 @@ html
       .devices-header 
         |Избраныне устройства 
         .arrows
-          img(src='arrow-left.svg' style='margin-right: 20px')
-          img(src='arrow-left.svg' style='transform: rotate(180deg);')
+          img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
+          img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
       .devices-content 
-        -for (var x = 0;  x < 10; x++)
-          .plate
+        .book
+          -for (var x = 0;  x < 10; x++)
+            .plate
     .footer
     script(src='script.js')
+    
 
     

@@ -2,7 +2,6 @@
     &-header {
         @extend %block-header;
         line-height: 80px;
-        padding-right: 40px;
     }
     &-content {
         height: 120px;
@@ -14,7 +13,10 @@
             flex-shrink: 0;
             margin-right: 15px;
         }
-        display: flex;
         overflow: hidden;
+    }
+    .book {
+        display: flex;
+        transition: margin 1s;
     }
 }
