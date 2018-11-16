@@ -21,7 +21,11 @@ html
               -for (var x = 0; x < 10; x++)
                 .plate 
       .scenario 
-        .scenario-header Избранные сценарии
+        .scenario-header 
+            |Избранные сценарии
+            .arrows
+              img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
+              img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
         .scenario-content 
           .book
             -for (var x = 0; x < 50; x++)
@@ -34,10 +38,12 @@ html
           img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
       .devices-content 
         .book
-          -for (var x = 0;  x < 10; x++)
+          -for (var x = 0;  x < 30; x++)
             .plate
     .footer
-    script(src='script.js')
+    script(src='./scripts/pagination.js')
+    script(src='./scripts/main.js')
+    
     
 
     

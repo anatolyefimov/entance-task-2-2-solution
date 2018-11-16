@@ -12,10 +12,11 @@
 .scenario-content {
     height: 100%;
     max-height: calc(100% - 70px);
-    overflow-x: scroll;
+    overflow-x: hidden;
     .book {
         height: 100%;
         column-width: 645px;
+        column-gap: 0;
     }
     .plate {
         width: 200px;

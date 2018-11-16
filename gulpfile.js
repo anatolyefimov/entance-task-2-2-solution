@@ -19,11 +19,8 @@ function css(){
 };
 
 function js() {
-    return src('src/*.js')
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(dest('dist'))
+    return src('src/scripts/*.js')
+        .pipe(dest('dist/scripts'))
         .pipe(reload({ stream:true }));
 };
 
@@ -47,7 +44,7 @@ function livereload(cb) {
         reload({ stream:true })
         cb()
     });
-    watch('./src/*.js', js, function(cb) {
+    watch('./src/scripts/*.js', js, function(cb) {
         reload({ stream:true })
         cb()
     });
