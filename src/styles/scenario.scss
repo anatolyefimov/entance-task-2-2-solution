@@ -1,6 +1,9 @@
 .scenario {
     display: flex;
     flex-direction: column;
+    @media (max-width: 640px) {
+        height: 100px;
+    }
 }
 
 .scenario-header {
@@ -13,10 +16,18 @@
     height: 100%;
     max-height: calc(100% - 70px);
     overflow-x: hidden;
+    @media (max-width: 640px) {
+        height:100px;
+    }
     .book {
         height: 100%;
         column-width: 645px;
         column-gap: 0;
+        @media (max-width: 640px) {
+            height:100px;
+            width: 100%;
+            column-width: 0;
+        }
     }
     .plate {
         width: 200px;
