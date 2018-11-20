@@ -1,3 +1,7 @@
+.body-scroller {
+    display: none;
+}
+
 .header {
     box-sizing: border-box;
     padding-left: 40px;
@@ -43,8 +47,14 @@
 }
 
 @media (max-width: 640px) {
+    .body-scroller {
+        display: block;
+        height: calc(100vh -65px);
+        width: 100%;
+        overflow: scroll;
+    }
     .header {
-        height: 60px;
+        height: 65px;
         padding-left: 20px;
         border: 0;
         a {
@@ -53,7 +63,7 @@
     }
     .container {
         flex-direction: column;
-        padding: 0 20px 0;
+        padding: 0;
         max-height: initial;
     }
 }

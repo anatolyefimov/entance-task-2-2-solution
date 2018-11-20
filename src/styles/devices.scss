@@ -21,3 +21,24 @@
         transition: margin 1s;
     }
 }
+
+
+@media (max-width: 640px) {
+    .devices {
+        padding: 0;
+        .arrows {
+            display: none;
+        }
+        &-header {
+            padding-left: 20px;
+        }
+        &-content {
+            overflow: hidden;
+        }
+        .book {
+            overflow: scroll;
+            padding-left: 20px;
+            height: 140px;
+        }
+    }
+}

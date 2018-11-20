@@ -4,43 +4,44 @@ html
     title Яндекс.Дом
     link(rel='stylesheet', href='main.css')
     meta(name='viewport' content='width=device-width, initial-scale-1.0')
-  body 
+  body
     .header 
       img(src='main-logo.svg' style='margin-right: 52px;')
       a.active(href='#') Сводка
       a(href='#') Устройства
       a(href='#') Сценарии
-    .container
-      .info 
-        .info-header Главное
-        .info-content 
-          .info-content-state
-            |Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-          .info-content-scenarios
-            .hide-scrollbar
-              -for (var x = 0; x < 10; x++)
-                .plate 
-      .scenario 
-        .scenario-header 
-            |Избранные сценарии
-            .arrows
-              img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
-              img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
-        .scenario-content 
+    .body-scroller 
+      .container
+        .info 
+          .info-header Главное
+          .info-content 
+            .info-content-state
+              |Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+            .info-content-scenarios
+              .hide-scrollbar
+                -for (var x = 0; x < 10; x++)
+                  .plate 
+        .scenario 
+          .scenario-header 
+              |Избранные сценарии
+              .arrows
+                img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
+                img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
+          .scenario-content 
+            .book
+              -for (var x = 0; x < 50; x++)
+                .plate  #{x}
+      .devices 
+        .devices-header 
+          |Избраныне устройства 
+          .arrows
+            img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
+            img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
+        .devices-content 
           .book
-            -for (var x = 0; x < 50; x++)
-              .plate  #{x}
-    .devices 
-      .devices-header 
-        |Избраныне устройства 
-        .arrows
-          img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
-          img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
-      .devices-content 
-        .book
-          -for (var x = 0;  x < 30; x++)
-            .plate
-    .footer
+            -for (var x = 0;  x < 30; x++)
+              .plate
+      .footer
     script(src='./scripts/pagination.js')
     script(src='./scripts/main.js')
     
