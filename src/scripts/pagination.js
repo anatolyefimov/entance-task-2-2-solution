@@ -1,13 +1,13 @@
-function pagination(container) {  
+function pagination(container, remainder) {  
     let arrows = container.querySelector('.arrows').childNodes;
     container = container.querySelector('.book')
     let containerWidht = parseInt(getComputedStyle(container).width)
-    let pageWidth = containerWidht - containerWidht % 1;
+    let pageWidth = containerWidht - containerWidht % remainder;
     container.style.marginLeft = '0px'
     function pagingCheck() {
         console.log(parseInt(container.style.marginLeft)  - pageWidth)
         console.log(-container.scrollWidth)
-        if (parseInt(container.style.marginLeft)  - pageWidth > -container.scrollWidth  - 1) {
+        if (parseInt(container.style.marginLeft)  - pageWidth > -container.scrollWidth  + 5) {
             arrows[0].style.opacity = '1';
         }
         else {

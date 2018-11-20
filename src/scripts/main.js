@@ -1,3 +1,3 @@
-pagination(document.querySelector('.devices'))
-pagination(document.querySelector('.scenario'));
+pagination(document.querySelector('.devices'), 215)
+pagination(document.querySelector('.scenario'), 1);
 
