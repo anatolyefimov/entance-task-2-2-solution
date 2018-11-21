@@ -39,7 +39,7 @@ html
       .devices 
         .devices-header 
           .filters
-            |Избраныне сценарии
+            div(style='margin-right: 15px') Избраныне сценарии
             .filter Все
             .filter Кухня 
             .filter Зал
@@ -49,9 +49,11 @@ html
             img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
             img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
         .devices-content 
+          var 
           .book
-            -for (var x = 0;  x < 30; x++)
-              .plate
+            -var filters = ['bulb', 'cam', 'kitchen', 'hall', 'kithchen', 'hall', 'bulb', 'hall']
+            each filter in filters
+              .plate(filter='#{filter}') #{filter}
       .footer
     script(src='./scripts/pagination.js')
     script(src='./scripts/main.js')
