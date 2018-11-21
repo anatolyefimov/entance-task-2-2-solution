@@ -38,22 +38,23 @@ html
                 .plate  #{x}
       .devices 
         .devices-header 
-          .filters
+          div(style='display:flex; align-content: center')
             div(style='margin-right: 15px') Избраныне сценарии
-            .filter Все
-            .filter Кухня 
-            .filter Зал
-            .filter Лампочки
-            .filter Камеры
+            .filters
+              .filter.active(filter='all') Все
+              .filter(filter='kitchen') Кухня 
+              .filter(filter='hall') Зал
+              .filter(filter='bulb') Лампочки
+              .filter(filter='cam') Камеры
           .arrows
             img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
             img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
         .devices-content 
           var 
           .book
-            -var filters = ['bulb', 'cam', 'kitchen', 'hall', 'kithchen', 'hall', 'bulb', 'hall']
+            -var filters = ['bulb', 'cam', 'kitchen', 'hall', 'kitchen', 'hall', 'bulb', 'hall']
             each filter in filters
-              .plate(filter='#{filter}') #{filter}
+              .plate(filter= filter) #{filter}
       .footer
     script(src='./scripts/pagination.js')
     script(src='./scripts/main.js')
