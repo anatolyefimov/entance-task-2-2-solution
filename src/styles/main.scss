@@ -37,7 +37,8 @@ a {
     font-size: 18px;
     color: $color-black;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center;
 }
 
 @import 'layout.scss';

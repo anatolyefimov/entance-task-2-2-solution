@@ -4,21 +4,19 @@
         line-height: 80px;
         padding-right: 40px;
         .filters {
-            display: inline-block;
-            margin: 0 15px;
+            display: flex;
+            align-items: center;
             .filter {
-                border-radius: 20px;
+                height:30px;
                 font-size: 13px;
-                font-family: Arial;
-                font-weight: bold;
-                color: black;
-                text-align: left;
                 background: #F7F7F7;
-                display: inline-block;
-                height: 30px;
-            }
-            .active {
-                background: #FFD93E;
+                line-height: 30px;
+                padding-left: 15px;
+                text-align: left;
+                padding-right: 15px;
+                margin-right: 10px;
+                border-radius: 20px;
+                vertical-align: center;
             }
         }
     }
