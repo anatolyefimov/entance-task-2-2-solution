@@ -3,6 +3,24 @@
         @extend %block-header;
         line-height: 80px;
         padding-right: 40px;
+        .filters {
+            display: inline-block;
+            margin: 0 15px;
+            .filter {
+                border-radius: 20px;
+                font-size: 13px;
+                font-family: Arial;
+                font-weight: bold;
+                color: black;
+                text-align: left;
+                background: #F7F7F7;
+                display: inline-block;
+                height: 30px;
+            }
+            .active {
+                background: #FFD93E;
+            }
+        }
     }
     &-content {
         height: 120px;

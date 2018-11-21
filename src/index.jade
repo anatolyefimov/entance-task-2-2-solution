@@ -10,6 +10,11 @@ html
       a.active(href='#') Сводка
       a(href='#') Устройства
       a(href='#') Сценарии
+      img(src='icon-list.svg' class='icon-list')
+    .menu
+      a.active(href='#') Сводка
+      a(href='#') Устройства
+      a(href='#') Сценарии
     .body-scroller 
       .container
         .info 
@@ -29,11 +34,12 @@ html
                 img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
           .scenario-content 
             .book
-              -for (var x = 0; x < 50; x++)
+              -for (var x = 0; x < 5; x++)
                 .plate  #{x}
       .devices 
         .devices-header 
-          |Избраныне устройства 
+          div
+            
           .arrows
             img(src='arrow-left.svg' style='margin-right: 20px; opacity: 0.3')
             img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
