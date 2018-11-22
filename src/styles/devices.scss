@@ -1,15 +1,18 @@
 .devices {
     &-header {
         @extend %block-header;
-        line-height: 80px;
         padding-right: 40px;
+        height: 80px;
+        align-items: flex-start;
+        padding-top: 30px;
+        box-sizing: border-box;
         .filters {
             display: flex;
-            align-items: center;
+            margin-top: -5px;
             .filter {
                 height:30px;
                 font-size: 13px;
-                background: #F7F7F7;
+                background: red;
                 line-height: 30px;
                 padding-left: 15px;
                 text-align: left;
@@ -58,6 +61,18 @@
             overflow: scroll;
             padding-left: 20px;
             height: 140px;
+        }
+    }
+}
+
+@media (max-width: 745px) {
+    .devices {
+        .filters {
+            flex-direction: column;
+            z-index: 1;
+        }
+        .wrapper {
+            display: flex;
         }
     }
 }
