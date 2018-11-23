@@ -38,10 +38,11 @@ html
                 .plate  #{x}
       .devices 
         .devices-header 
-          div(style='display:flex; max-height: 80px')
+          div(style='display:flex;')
             div(style='margin-right: 15px') Избраныне сценарии
             .filters
-              .filter.active(filter='all') Все
+              img.arrow-devices(src='arrow-devices.svg')
+              .filter.active.close(filter='all') Все 
               .filter(filter='kitchen') Кухня 
               .filter(filter='hall') Зал
               .filter(filter='bulb') Лампочки

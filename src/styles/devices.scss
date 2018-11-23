@@ -1,4 +1,7 @@
 .devices {
+    .arrow-devices {
+        display: none;
+    }
     &-header {
         @extend %block-header;
         padding-right: 40px;
@@ -9,10 +12,13 @@
         .filters {
             display: flex;
             margin-top: -5px;
+            height: 30px;
+            overflow: hidden;
+            transition: height 1s;
             .filter {
                 height:30px;
                 font-size: 13px;
-                background: red;
+                background: rgb(192, 192, 192);
                 line-height: 30px;
                 padding-left: 15px;
                 text-align: left;
@@ -67,9 +73,30 @@
 
 @media (max-width: 745px) {
     .devices {
+        .arrow-devices {
+            display: block;
+            position: absolute;
+            top: 7px;
+            right: 10px;
+        }
         .filters {
+            position: relative;
             flex-direction: column;
             z-index: 1;
+            background: rgb(192, 192, 192);
+            border-radius: 20px;
+            max-height: none;
+            .filter {
+                width : 80px;
+                margin: 0;
+                border-radius: 20px;
+                display: flex;
+                justify-content: flex-start;
+                &:active {
+                    color: #c00;
+                }
+            }
+           
         }
         .wrapper {
             display: flex;
