@@ -12,6 +12,7 @@ document.querySelector('.icon-list').addEventListener('click', function() {
 let filtersContainer = document.querySelector('.filters');
 let filters = filtersContainer.children;
 let devices = document.querySelector('.devices .book').children;
+let arrowDevices = document.querySelector('.devices .arrow-devices');
 for (let filter of filters) {
     if (filter.classList.contains('filter'))
         filter.addEventListener('click', function(event) {
@@ -22,6 +23,7 @@ for (let filter of filters) {
                 filter.classList.remove('close');
                 filtersContainer.style.transition='height 0.5s';
                 filtersContainer.style.height='150px';
+                arrowDevices.style.transform = 'rotate(180deg)';
                 return;
             }
             for (let cur of filters) {
@@ -31,6 +33,7 @@ for (let filter of filters) {
             }
             this.classList.add('active')
             if (w <= 745) {
+                arrowDevices.style.transform = 'none';
                 filtersContainer.style.transition = 'none';
                 filtersContainer.style.height = '30px';
                 for (let i = 0;  i < filters.length; ++i) {
