@@ -13,6 +13,7 @@ let filtersContainer = document.querySelector('.filters');
 let filters = filtersContainer.children;
 let devices = document.querySelector('.devices .book').children;
 let arrowDevices = document.querySelector('.devices .arrow-devices');
+
 for (let filter of filters) {
     if (filter.classList.contains('filter'))
         filter.addEventListener('click', function(event) {
@@ -52,4 +53,15 @@ for (let filter of filters) {
                 }
             }
         })
+}
+
+let popup = document.querySelector('.popup');
+
+for (let i = 0; i < devices.length; ++i) {
+    devices[i].addEventListener('click', function(event) {
+        popup.style.left = event.x + 'px';
+        popup.style.top = event.y + 'px';
+        popup.classList.add('opened')
+        document.querySelector('.paranja').style.display = 'block'
+    })
 }

@@ -33,7 +33,7 @@ function html() {
 
 function livereload(cb) {
     browserSync({
-        server: ['./dist', './assets']
+        server: ['./dist', './assets', './src']
     });
 
     watch('./src/styles/*.scss', css, function(cb) {

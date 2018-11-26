@@ -50,6 +50,33 @@
     }
 }
 
+.paranja { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:  rgba(51,51,51,0.50);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.popup {
+    height: 350px;
+    width: 630px;
+    background: white;
+    position: absolute;
+    transform-origin: top left;
+    transform: scale(0.1);
+    transition: top 1s, left 1s;
+    
+}
+
+.popup.opened {
+    transform: scale(1) translate(-50%, -50%) ;
+    top: 50% !important;
+    left: 50% !important;
+}
+
 
 @media (max-width: 640px) {
     .devices {
