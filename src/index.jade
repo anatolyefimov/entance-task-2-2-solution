@@ -21,11 +21,26 @@ html
           .info-header Главное
           .info-content 
             .info-content-state
-              |Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+              .h Привет, Геннадий! <br>
+              |Двери и окна закрыты, сигналиция включена.<br>
+              .temp
+                .temp-header Дома
+                .temp-value +23
+              .temp 
+                .temp-header За окном
+                .temp-value
+                  span(style = 'margin-right:5px')|+19
+                  img(src='cloud-drizzle.svg')
             .info-content-scenarios
               .hide-scrollbar
-                -for (var x = 0; x < 10; x++)
+                -var infos = [{icon: 'icon-temperature.svg', action: 'Philips Cooler', time: 'Начинать охлаждать в 16:30' }, {icon: 'icon-sun.svg', action: 'Xiaomi Yeelight LED Smart Bulb', time: 'Включится в 17:00' }, {icon: 'icon-temperature.svg', action: 'Philips Cooler', time: 'Начинать охлаждать в 16:30' }];
+                
+                each info in infos
                   .plate 
+                    img(src=info.icon)
+                    div
+                      .plate-action #{info.action}
+                      .plate-time #{info.time}
         .scenario 
           .scenario-header 
               |Избранные сценарии

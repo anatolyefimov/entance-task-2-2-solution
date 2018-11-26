@@ -21,8 +21,29 @@
     display: flex;
     padding: 0 20px 0 25px;
     box-sizing: border-box;
+    .h {
+        font-size: 27px;
+        color : $color-black;
+        font-weight: bold;
+    }
+    .temp {
+        display: inline-block;
+        margin-right: 18px;
+        margin-top: 25px;
+    }
+    .temp-header {
+        color: $color-gray;
+    }
+    .temp-value {
+        font-size: 36px;
+        text-align: left;
+        letter-spacing: 0;
+        font-weight: bold;
+    }
+    
     &-state {
         overflow: hidden;
+        padding: 25px 25px 0 0;
     }
     &-scenarios {
         flex-shrink: 0;
