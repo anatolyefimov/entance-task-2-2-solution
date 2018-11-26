@@ -48,7 +48,7 @@ function livereload(cb) {
         reload({ stream:true })
         cb()
     });
-   
+   cb()
 } 
 
 exports.livereload = livereload;
