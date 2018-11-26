@@ -61,7 +61,11 @@ for (let i = 0; i < devices.length; ++i) {
     devices[i].addEventListener('click', function(event) {
         popup.style.left = event.x + 'px';
         popup.style.top = event.y + 'px';
-        popup.classList.add('opened')
-        document.querySelector('.paranja').style.display = 'block'
+        document.querySelector('.paranja').style.display = 'block';
+        setTimeout(function() {
+            popup.classList.add('opened')
+            document.querySelector('.header').classList.add('opened');
+            document.querySelector('.body-scroller').classList.add('opened')
+        }, 10);
     })
 }
