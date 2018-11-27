@@ -17,41 +17,34 @@ let arrowDevices = document.querySelector('.devices .arrow-devices');
 for (let filter of filters) {
     if (filter.classList.contains('filter'))
         filter.addEventListener('click', function(event) {
-            if (filter.classList.contains('close')) {
-                for (let i = 0; i < filters.length; ++i) {
-                    filters[i].style.display='block';
-                }
-                filter.classList.remove('close');
-                filtersContainer.style.transition='height 0.5s';
-                filtersContainer.style.height='150px';
-                arrowDevices.style.transform = 'rotate(180deg)';
-                return;
-            }
-            for (let cur of filters) {
-                if (cur.classList.contains('active')) {
-                    cur.classList.remove('active')
-                }
-            }
-            this.classList.add('active')
+            w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             if (w <= 745) {
-                arrowDevices.style.transform = 'none';
-                filtersContainer.style.transition = 'none';
-                filtersContainer.style.height = '30px';
-                for (let i = 0;  i < filters.length; ++i) {
-                    if (!filters[i].classList.contains('active') && !filters[i].classList.contains('arrow-devices')) {
+                if (filtersContainer.classList.contains('opened')) {
+                    for (let i = 0; i < devices.length; ++i) {
+                        if (devices[i].getAttribute('filter') !== this.getAttribute('filter')) {
+                            devices[i].style.display = 'none';
+                        }
+                        else {
+                            devices[i].style.display = 'flex';
+                        }
+                    }
+                    for (let i = 0; i < filters.length; ++i) {
+                        filters[i].classList.remove('active')
                         filters[i].style.display = 'none';
                     }
-                }
-                this.classList.add('close')
-            }
-            for (let i = 0; i < devices.length; ++i) {
-                if (devices[i].getAttribute('filter') === this.getAttribute('filter') || this.getAttribute('filter') === 'all') {
-                    devices[i].style.display = 'block';
+                    this.style.display='block';
+                    this.classList.add('active')
+                    filtersContainer.classList.remove('opened'); 
                 }
                 else {
-                    devices[i].style.display = 'none';
+                    filtersContainer.classList.add('opened');
+                    for (let i = 0; i < filters.length; ++i) {
+                        filters[i].style.display = 'block';
+                    }
                 }
             }
+            
         })
 }
 

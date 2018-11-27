@@ -5,9 +5,8 @@ function pagination(container, remainder) {
     let pageWidth = containerWidht - containerWidht % remainder;
     container.style.marginLeft = '0px'
     function pagingCheck() {
-        console.log(parseInt(container.style.marginLeft)  - pageWidth)
-        console.log(-container.scrollWidth)
-        if (parseInt(container.style.marginLeft)  - pageWidth > -container.scrollWidth  + 5) {
+        if (parseInt(container.style.marginLeft)  - pageWidth > -container.scrollWidth  + 5 +  pageWidth) {
+            console.log(parseInt(container.style.marginLeft)  - pageWidth)
             arrows[0].style.opacity = '1';
         }
         else {
