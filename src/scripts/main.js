@@ -79,3 +79,16 @@ document.querySelector('.info .hide-scrollbar').addEventListener('scroll', funct
         arrowDouble.style.opacity = '0.8';
     }
 })
+
+let scenario = document.querySelector('.scenario .book')
+
+scenario.addEventListener('click', function(event) {
+    if (event.target.classList.contains('plate')) {
+        if (event.target.classList.contains('in-gear')) {
+            event.target.classList.remove('in-gear')
+        }
+        else {
+            event.target.classList.add('in-gear')
+        }
+    }
+})
