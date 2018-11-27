@@ -69,3 +69,13 @@ for (let i = 0; i < devices.length; ++i) {
         }, 10);
     })
 }
+
+let arrowDouble = document.querySelector('.arrow-double')
+document.querySelector('.info .hide-scrollbar').addEventListener('scroll', function(event) {
+    if (event.target.scrollTop > 0) {
+        arrowDouble.style.opacity = '0.3';
+    }
+    else {
+        arrowDouble.style.opacity = '0.8';
+    }
+})

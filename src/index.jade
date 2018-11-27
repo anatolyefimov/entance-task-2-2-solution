@@ -32,9 +32,9 @@ html
                   span(style = 'margin-right:5px')|+19
                   img(src='cloud-drizzle.svg')
             .info-content-scenarios
+              img.arrow-double(src='arrow-double.svg')
               .hide-scrollbar
                 -var infos = [{icon: 'icon-temperature.svg', action: 'Philips Cooler', time: 'Начинать охлаждать в 16:30' }, {icon: 'icon-sun.svg', action: 'Xiaomi Yeelight LED Smart Bulb', time: 'Включится в 17:00' }, {icon: 'icon-temperature.svg', action: 'Philips Cooler', time: 'Начинать охлаждать в 16:30' }];
-                
                 each info in infos
                   .plate 
                     img(src=info.icon)
@@ -49,8 +49,14 @@ html
                 img(src='arrow-left.svg' style='transform: rotate(180deg); opacity: 0.3')
           .scenario-content 
             .book
-              -for (var x = 0; x < 5; x++)
-                .plate  #{x}
+              -var infos = [{icon: 'icon-sun-2.svg', action: 'Выключить весь свет в доме и во дворе', time: ''}, {icon: 'icon-sheduled.svg', action: 'Я ухожу'}, {icon:'icon-sun-2.svg', action: 'Включите свет в коридоре'}, {icon: 'icon-temperature-2.svg', action: 'Набрать горячую ванну', time: 'Начнётся в 18:00'}, {icon: 'icon-temperature-2.svg', action: 'Сделать пол теплым во всей квартире'}];
+              each info in infos
+                .plate
+                  img(src=info.icon)
+                  div 
+                    .plate-action #{info.action}
+                    if info.time
+                      .plate-time #{info.time} 
       .devices 
         .devices-header 
           div(style='display:flex;')
@@ -68,9 +74,23 @@ html
         .devices-content 
           var 
           .book
-            -var filters = ['bulb', 'cam', 'kitchen', 'hall', 'kitchen', 'hall', 'bulb', 'hall']
-            each filter in filters
-              .plate(filter= filter) #{filter}
+            -
+              var infos = [
+                {icon:'icon-sun-2.svg', action: 'Xiaomi Yeelight LED Smart Bulb', time: 'Включено', filter: 'bulb'},
+                {icon:'icon-sun.svg', action: 'D-Link Omna 180 Cam', time: 'Включиться в 17:00', filter: 'cam'},
+                {icon:'icon-temperature-2.svg', action: 'Elgato Eve Degree Connected', time: 'Выключено до 17:00', filter: 'hall'},
+                {icon:'icon-sun.svg', action: 'LIFX Mini Day & Dusk A60 E27', time: 'Включится в 17:00', filter: 'bulb'},
+                {icon:'icon-sun-2.svg', action: 'Xiaomi Mi Air Purifier 2S', time: 'Включено', filter: 'kitchen'},
+                {icon:'icon-sun.svg', action: 'Philips Zhirui', time: 'Выключено', filter: 'bulb'},
+                {icon:'icon-sun-2.svg', action: 'Xiaomi Yeelight LED Smart Bulb', time: 'Включено', filter: 'bulb'}
+              ]
+            each info in infos
+              .plate(filter=info.filter) 
+                img(src=info.icon)
+                div
+                  .plate-action #{info.action}
+                  .plate-time #{info.time}
+                
       .footer
     .paranja
       .popup

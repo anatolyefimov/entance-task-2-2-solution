@@ -46,6 +46,7 @@
         padding: 25px 25px 0 0;
     }
     &-scenarios {
+        position: relative;
         flex-shrink: 0;
         width: 200px;
         flex-grow: 0;
@@ -69,6 +70,12 @@
         background: #F7F7F7;
         margin-bottom: 15px;
     }
+}
+
+.arrow-double {
+    position: absolute;
+    bottom: 12px;
+    left: 90px;
 }
 
 @media (max-width: 640px) {

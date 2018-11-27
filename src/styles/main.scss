@@ -53,9 +53,9 @@ a {
     align-items: flex-start;
     &-action {
         font-weight: bold;
-        margin-bottom: 5px;
     }
     &-time {
+        margin-top: 5px;
         color: $color-gray;
         font-size: 12px;
         letter-spacing: 0;
