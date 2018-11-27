@@ -22,7 +22,7 @@ for (let filter of filters) {
             if (w <= 745) {
                 if (filtersContainer.classList.contains('opened')) {
                     for (let i = 0; i < devices.length; ++i) {
-                        if (devices[i].getAttribute('filter') !== this.getAttribute('filter')) {
+                        if (devices[i].getAttribute('filter') !== this.getAttribute('filter') && this.getAttribute('filter') !=='all' ) {
                             devices[i].style.display = 'none';
                         }
                         else {
@@ -41,6 +41,20 @@ for (let filter of filters) {
                     filtersContainer.classList.add('opened');
                     for (let i = 0; i < filters.length; ++i) {
                         filters[i].style.display = 'block';
+                    }
+                }
+            }
+            else {
+                for (let i = 0; i < filters.length; ++i) {
+                    filters[i].classList.remove('active')
+                }
+                this.classList.add('active');
+                for (let i = 0; i < devices.length; ++i) {
+                    if (devices[i].getAttribute('filter') !== this.getAttribute('filter') && this.getAttribute('filter') !=='all' ) {
+                        devices[i].style.display = 'none';
+                    }
+                    else {
+                        devices[i].style.display = 'flex';
                     }
                 }
             }
