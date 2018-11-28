@@ -7,6 +7,7 @@
     @extend %block-header;
     line-height: 70px;
     vertical-align: 20px;
+    height: 70px;
 }
 
 .scenario-content {
@@ -33,7 +34,7 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 745px) {
     .scenario {
         height: 170px;
         flex-basis: 0%;

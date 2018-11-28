@@ -50,7 +50,6 @@
 
 .footer{
     height: 61px;
-    border: 3px solid black;
     width: 100%;
     flex-shrink: 0;
     box-sizing: border-box;
@@ -62,7 +61,7 @@
     padding-left: 40px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 745px) {
     .body-scroller {
         display: block;
         height: calc(100vh -65px);

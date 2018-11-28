@@ -78,7 +78,10 @@
     left: 90px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 745px) {
+    .arrow-double {
+        display: none;
+    }
     .info {
         padding: 0 20px 0;
         margin-right: 0;
