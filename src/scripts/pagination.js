@@ -3,10 +3,10 @@ function pagination(container, remainder) {
     container = container.querySelector('.book')
     let containerWidht = parseInt(getComputedStyle(container).width)
     let pageWidth = containerWidht - containerWidht % remainder;
-    container.style.marginLeft = '0px'
+    container.style.marginLeft = '0px'  
     function pagingCheck() {
-        if (parseInt(container.style.marginLeft)  - pageWidth > -container.scrollWidth  + 5 +  pageWidth) {
-            console.log(parseInt(container.style.marginLeft)  - pageWidth)
+        if (-parseInt(container.style.marginLeft) + containerWidht < container.scrollWidth  ) {
+            console.log('test')
             arrows[0].style.opacity = '1';
         }
         else {

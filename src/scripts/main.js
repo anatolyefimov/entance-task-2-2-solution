@@ -13,6 +13,8 @@ let filtersContainer = document.querySelector('.filters');
 let filters = filtersContainer.children;
 let devices = document.querySelector('.devices .book').children;
 let arrowDevices = document.querySelector('.devices .arrow-devices');
+let devicesContainer = document.querySelector('.devices .book')
+let arrowsForDevicesPaging = document.querySelector('.devices .arrows').children
 
 for (let filter of filters) {
     if (filter.classList.contains('filter'))
@@ -56,6 +58,20 @@ for (let filter of filters) {
                     else {
                         devices[i].style.display = 'flex';
                     }
+                    
+                }
+                if (-parseInt(devicesContainer.style.marginLeft) + parseInt(getComputedStyle(devicesContainer).width) < devicesContainer.scrollWidth  ) {
+                    console.log('test')
+                    arrowsForDevicesPaging[0].style.opacity = '1';
+                }
+                else {
+                    arrowsForDevicesPaging[0].style.opacity = '0.3';
+                }
+                if (parseInt(devicesContainer.style.marginLeft) <  0) {
+                    arrowsForDevicesPaging[1].style.opacity = '1';
+                }
+                else {
+                    arrowsForDevicesPaging[1].style.opacity = '0.3';
                 }
             }
             
